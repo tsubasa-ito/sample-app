@@ -1,18 +1,13 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <Addresses/>
-  </div>
+  <HelloWorld />
 </template>
 
 <script>
-// @ ＝ /src
-import Addresses from '@/components/Addresses.vue'
+  import HelloWorld from '../components/HelloWorld'
 
-export default {
-  name: 'home',
-  components: {
-    Addresses
+  export default {
+    components: {
+      HelloWorld
+    }
   }
-}
 </script>
