@@ -5,16 +5,24 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    drawer : false
+    drawer : false,
+    addresses: []
   },
   mutations: {
     toggleSideMenu (state){
       state.drawer = !state.drawer
+    },
+    addAddress (state, address) {
+      state.addresses.push(address)
     }
   },
   actions: {
     toggleSideMenu ({ commit }) {
       commit('toggleSideMenu')
+    },
+    // 第二引数でaddressのデータを渡す
+    addAddress ({ commit }, address) {
+      commit('addAddress', address)
     }
   }
 })
