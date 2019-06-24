@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import firebase from 'firebase'
+import { get } from 'https';
 
 Vue.use(Vuex)
 
@@ -42,12 +43,14 @@ export default new Vuex.Store({
       commit('toggleSideMenu')
     },
     // 第二引数でaddressのデータを渡す
-    addAddress ({ commit }, address) {
+    addAddress ({ getters, commit }, address) {
+      if(getters.uid) firebase.firestore().collection('users/${getters.uid}/addresses').add(address)
       commit('addAddress', address)
     }
   },
   getters: {
     userName: state => state.login_user ? state.login_user.displayName : '',
-    photoURL: state => state.login_user ? state.login_user.photoURL : ''
+    photoURL: state => state.login_user ? state.login_user.photoURL : '',
+    uid: state => state.login_user ? state.login_user.uid: null
   }
 })
