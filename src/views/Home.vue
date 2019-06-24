@@ -1,5 +1,5 @@
 <template>
-<v-container text-xs-center justify-center>
+  <v-container text-xs-center justify-center>
     <v-layout row wrap>
       <v-flex xs12>
         <h1>マイアドレス帳</h1>
