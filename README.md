@@ -1,5 +1,9 @@
 # sample-app
 
+## Project URL
+https://my-address-pj-1806f.firebaseapp.com
+title: マイアドレス帳
+
 ## Project setup
 ```
 npm install
